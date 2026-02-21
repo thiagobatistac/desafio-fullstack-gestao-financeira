@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import api from '../src/lib/api';
-import { setToken } from '../src/lib/auth';
+import api from '@/lib/api';
+import { setToken } from '@/lib/auth';
 
 export default function Home() {
   const router = useRouter();
