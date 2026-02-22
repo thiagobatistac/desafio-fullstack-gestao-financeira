@@ -27,7 +27,7 @@ export class TransactionsService {
     month: number,
     year: number,
   ): Promise<TransactionDocument[]> {
-    const start = new Date(year, month - 1, 1);
+    const start = new Date(year, month - 1, 1, 0, 0, 0);
     const end = new Date(year, month, 0, 23, 59, 59);
 
     const regular = await this.transactionModel.find({

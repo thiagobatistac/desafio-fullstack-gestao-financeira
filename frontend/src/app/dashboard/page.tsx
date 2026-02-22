@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { isAuthenticated, removeToken } from '@/lib/auth';
 import { Transaction, Balance } from '@/types';
 import api from '@/lib/api';
-import AddTransactionForm from '@/components/AddTransactionForm';
+import TransactionForm from '@/components/TransactionForm';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -14,6 +14,7 @@ export default function Dashboard() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(new Date().getFullYear());
   const [loading, setLoading] = useState(true);
+  const [editingTransaction, setEditingTransaction] = useState<Transaction | null>(null);
 
   useEffect(() => {
     if (!isAuthenticated()) {
@@ -36,6 +37,16 @@ export default function Dashboard() {
       router.push('/');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm('Deseja realmente excluir essa transação?')) return;
+    try {
+      await api.delete(`/transactions/${id}`);
+      fetchData();
+    } catch {
+      alert('Erro ao excluir transação');
     }
   };
 
@@ -87,8 +98,16 @@ export default function Dashboard() {
           </select>
         </div>
 
-        {/* Adicionar transação */}
-        <AddTransactionForm onSuccess={fetchData} />
+        {/* Formulário de nova transação ou edição */}
+        {editingTransaction ? (
+          <TransactionForm
+            onSuccess={() => { setEditingTransaction(null); fetchData(); }}
+            editData={editingTransaction}
+            onCancel={() => setEditingTransaction(null)}
+          />
+        ) : (
+          <TransactionForm onSuccess={fetchData} />
+        )}
 
         {/* Cards de saldo */}
         {balance && (
@@ -128,9 +147,23 @@ export default function Dashboard() {
                       {t.recurrenceDay ? ` · Todo dia ${t.recurrenceDay}` : ` · ${new Date(t.date).toLocaleDateString('pt-BR')}`}
                     </p>
                   </div>
-                  <p className={`font-bold ${t.type === 'income' ? 'text-emerald-400' : 'text-red-400'}`}>
-                    {t.type === 'income' ? '+' : '-'}{formatCurrency(t.amount)}
-                  </p>
+                  <div className="flex items-center gap-4">
+                    <p className={`font-bold ${t.type === 'income' ? 'text-emerald-400' : 'text-red-400'}`}>
+                      {t.type === 'income' ? '+' : '-'}{formatCurrency(t.amount)}
+                    </p>
+                    <button
+                      onClick={() => setEditingTransaction(t)}
+                      className="text-gray-400 hover:text-emerald-400 transition-colors text-sm"
+                    >
+                      ✏️
+                    </button>
+                    <button
+                      onClick={() => handleDelete(t._id)}
+                      className="text-gray-400 hover:text-red-400 transition-colors text-sm"
+                    >
+                      🗑️
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
