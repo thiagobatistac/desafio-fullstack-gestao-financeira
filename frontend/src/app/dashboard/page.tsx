@@ -65,14 +65,17 @@ export default function Dashboard() {
 
   return (
     <main className="min-h-screen bg-[#0f1117] text-white">
-      <header className="bg-[#1a1d27] border-b border-[#2a2d3a] px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">💰 Gestão Financeira</h1>
-        <button
-          onClick={handleLogout}
-          className="text-sm text-gray-400 hover:text-white transition-colors"
-        >
-          Sair
-        </button>
+      <header className="bg-[#1a1d27] border-b border-[#2a2d3a] px-6 py-6 flex justify-between items-center">
+        <div className="flex-1" />
+        <h1 className="text-2xl font-bold tracking-tight">💰 Gestão Financeira</h1>
+        <div className="flex-1 flex justify-end">
+          <button
+            onClick={handleLogout}
+            className="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            Sair
+          </button>
+        </div>
       </header>
 
       <div className="max-w-5xl mx-auto p-6 flex flex-col gap-6">
