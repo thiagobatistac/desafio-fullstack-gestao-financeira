@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { isAuthenticated, removeToken } from '@/lib/auth';
 import { Transaction, Balance } from '@/types';
 import api from '@/lib/api';
+import AddTransactionForm from '@/components/AddTransactionForm';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -53,7 +54,6 @@ export default function Dashboard() {
 
   return (
     <main className="min-h-screen bg-[#0f1117] text-white">
-      {/* Header */}
       <header className="bg-[#1a1d27] border-b border-[#2a2d3a] px-6 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">💰 Gestão Financeira</h1>
         <button
@@ -86,6 +86,9 @@ export default function Dashboard() {
             ))}
           </select>
         </div>
+
+        {/* Adicionar transação */}
+        <AddTransactionForm onSuccess={fetchData} />
 
         {/* Cards de saldo */}
         {balance && (
