@@ -1,8 +1,8 @@
-# 💰 Gestão Financeira Pessoal
+#  Gestão Financeira Pessoal
 
 Sistema fullstack de gestão financeira pessoal desenvolvido como desafio técnico.
 
-## 🚀 Tecnologias
+##  Tecnologias
 
 - **Backend:** NestJS + Mongoose
 - **Banco de Dados:** MongoDB
@@ -10,7 +10,7 @@ Sistema fullstack de gestão financeira pessoal desenvolvido como desafio técni
 
 ---
 
-## ⚙️ Como Executar
+##  Como Executar
 
 ### Pré-requisitos
 
@@ -52,7 +52,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ---
 
-## 📡 Endpoints da API
+##  Endpoints da API
 
 ### Autenticação
 | Método | Rota | Descrição |
@@ -74,7 +74,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ---
 
-## 🏗️ Decisões Técnicas
+##  Decisões Técnicas
 
 - **Despesas fixas sem duplicação:** em vez de criar uma cópia da despesa fixa para cada mês, ela é armazenada uma única vez no banco e retornada automaticamente em qualquer consulta mensal, mantendo o banco limpo
 - **Edição via delete + create:** a edição foi implementada no frontend deletando a transação antiga e criando uma nova com os dados atualizados, evitando a necessidade de um endpoint PATCH no backend
@@ -84,7 +84,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Tela de Login
 <img width="1919" height="913" alt="Captura de tela 2026-02-22 135003" src="https://github.com/user-attachments/assets/916fe88a-454c-4e96-b858-a181b7ad982b" />
@@ -106,7 +106,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 ```
 Desafio Fullstack – Gestão Financeira/
 ├── backend/
