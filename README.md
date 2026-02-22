@@ -87,22 +87,22 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 ## 📸 Screenshots
 
 ### Tela de Login
-![Login](./screenshots/login.png)
+<img width="1919" height="913" alt="Captura de tela 2026-02-22 135003" src="https://github.com/user-attachments/assets/916fe88a-454c-4e96-b858-a181b7ad982b" />
 
 ### Dashboard vazio
-![Dashboard vazio](./screenshots/dashboard-vazio.png)
+<img width="1919" height="915" alt="Captura de tela 2026-02-22 134259" src="https://github.com/user-attachments/assets/4860d605-fafb-4dd5-af91-42eafaa11ff0" />
 
 ### Dashboard com transações
-![Dashboard com transações](./screenshots/dashboard-transacoes.png)
+<img width="1919" height="910" alt="Captura de tela 2026-02-22 134843" src="https://github.com/user-attachments/assets/6aef8924-88a9-492d-b99c-6f64458efbbb" />
 
 ### Formulário de nova transação
-![Nova transação](./screenshots/nova-transacao.png)
+<img width="1913" height="430" alt="Captura de tela 2026-02-22 134927" src="https://github.com/user-attachments/assets/53416074-3b9b-4768-a96f-952d45c28d6b" />
 
 ### Editar transação
-![Editar transação](./screenshots/editar-transacao.png)
+<img width="1919" height="494" alt="Captura de tela 2026-02-22 134947" src="https://github.com/user-attachments/assets/1e98a4c1-fde0-407e-8347-dc5e1ef57c5f" />
 
 ### Despesas fixas em outro mês
-![Despesas fixas](./screenshots/despesas-fixas.png)
+<img width="1919" height="910" alt="Captura de tela 2026-02-22 134859" src="https://github.com/user-attachments/assets/d7084256-8fe8-48ff-8b8f-1da82e955f88" />
 
 ---
 
